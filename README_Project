@@ -1,0 +1,15 @@
+# Personal Biography Website
+Built with react
+
+## Commands
+```
+npm run build
+```
+To build static page and deploy on the `gh-pages` branch
+
+```
+git add .
+git commit -m "<title>"
+git push origin master
+```
+To push a commit to the `master` branch

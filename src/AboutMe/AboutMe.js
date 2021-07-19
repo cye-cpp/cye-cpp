@@ -1,3 +1,4 @@
+import { Container, Row, Col } from 'react-bootstrap';
 import './AboutMe.css';
 
 function AboutMe() {
@@ -17,32 +18,18 @@ function AboutMe() {
                 technologies that utilize it.<br></br>
                 The following are the technologies I have been working with recently:<br></br>
             </p>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            JavaScript (ES6+)
-                        </td>
-                        <td>
-                            Java
-                        </td>
-                        <td>
-                            Python
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Node.js
-                        </td>
-                        <td>
-                            React.js
-                        </td>
-                        <td>
-                            HTML / CSS
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <Container>
+                <Row>
+                    <Col><code className="recent">JavaScript (ES6+)</code></Col>
+                    <Col><code className="recent">Java</code></Col>
+                    <Col><code className="recent">Python</code></Col>
+                </Row>
+                <Row>
+                    <Col><code className="recent">Node.js</code></Col>
+                    <Col><code className="recent">React.js</code></Col>
+                    <Col><code className="recent">HTML / CSS</code></Col>
+                </Row>
+            </Container>
         </div>
     );
 }

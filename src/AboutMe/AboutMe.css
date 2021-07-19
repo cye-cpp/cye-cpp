@@ -8,12 +8,10 @@
     padding-top: 3vh;   
 }
 
-#about td {
-    font-size: large;
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-    padding-right: 75px;
+#about .recent {
+    display: inline-block;
 }
-#about td::before {
+#about .recent::before {
     content: '\2022';
     margin-right: 5px;
 }

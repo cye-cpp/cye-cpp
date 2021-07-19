@@ -1,0 +1,228 @@
+#projects {
+    text-align: left;
+}
+
+#projects h2 {
+    padding-top: 10vh;
+    text-align: left;
+    padding-left: 10vw;
+}
+
+#projects h3 {
+    text-align: center;
+    margin-top: 10vh;
+    font-weight: 300;
+}
+
+/* featured projects : global screen design */
+.project {
+    --project-spacing: 30px;
+    margin: var(--project-spacing) 0 var(--project-spacing) 0;
+}
+.project :not(.technology) code {
+    color: pink;
+    margin-left: 20px;
+}
+.project .text {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: aliceblue;
+}
+.project .image {
+    position: relative;
+    z-index: -1;
+}
+.project .image img {
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.project .title {
+    font-weight: bold;
+    font-size: 32px;
+}
+.project .name {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: greenyellow;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+.project .title,
+.project .name,
+.project .description,
+.project .technology {
+    text-align: left;
+    margin-left: 20px;
+}
+.project .technology code {
+    color: yellow;
+    display: inline-block;
+}
+.project .technology code:not(:last-of-type) {
+    margin-right: 25px;
+}
+.project a {
+    float: right;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    margin: 0 5px 0 5px;
+}
+/*
+    Used to combat the JSX-ESLint "anchor-has-content" error
+    Wrapping text in a <span> within an <a> will hide it
+*/
+.project a span {
+    line-height: 0; 
+    font-size: 0;
+    visibility: hidden;
+}
+/* featured projects : screen width > 1200px */
+@media only screen and (min-width: 1200px) {
+    .project {
+        --project-spacing: 5px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        position: relative;
+        flex-direction: row;
+        transition: .2s;
+        margin: var(--project-spacing) 0 var(--project-spacing) 0;
+    }
+    .project .text {
+        /* text box design */
+        width: 500px;
+        transition: .2s;
+        position: relative;
+        left: 250px;
+    }
+    .project:hover .text {
+        transform: translateX(-3vw);
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .project .image {
+        display: flex;
+        right: 250px;
+        transition: .2s;
+        /*transform: translateX(0.1px);*/
+    }
+    .project:hover .image {
+        transform: translate(10vw, 2vh);
+    }
+    .project:not(:hover) .image {
+        filter: blur(4px);
+    }
+    .project:hover ~ .project {
+        transform: translateY(2vh);
+    }
+    .project a {
+        position: relative;
+        top: 25px;
+    }
+}
+/* featured projects : screen width < 1200px */
+@media only screen and (max-width: 1199px) and (min-width: 768px) {
+    .project {
+        transition: transform 1000ms;
+    }
+    .project:not(:first-of-type) {
+        margin-top: -300px;
+    }
+    .project .text {
+        height: 300px;
+    }
+    .project .image {
+        transition: opacity 1000ms, transform 1000ms;
+    }
+    .project:hover .image {
+        opacity: 1;
+    }
+    .project:not(:hover) .image {
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+    .project:hover ~ .project {
+        transform: translateY(300px);  
+    }
+}
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    .project a {
+        position: relative;
+        bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .project .image img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* small project : global screen size */
+#projects .small .header {
+    color: greenyellow;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+#projects .small .title {
+    color: cyan;
+}
+#projects .small code {
+    display: inline-block;
+}
+#projects .small code:not(:last-of-type) {
+    margin-right: 7px;
+}
+#projects .small code:not(:last-of-type)::after {
+    content: ',';
+}
+#projects .small a {
+    float: right;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    margin: 0 5px 0 5px;
+}
+/*
+    Used to combat the JSX-ESLint "anchor-has-content" error
+    Wrapping text in a <span> within an <a> will hide it
+*/
+#projects .small a span {
+    line-height: 0; 
+    font-size: 0;
+    visibility: hidden;
+}
+#projects .small .card-list {
+    align-content: center;
+    justify-content: center;
+}
+#projects .small .card {
+    margin: 5px;
+}
+/* small project : width > 1200 */
+@media (min-width: 1400px) {
+    /* Small projects card list */
+    #projects .small .card-list {
+        display: flex;
+        padding: 3rem;
+    }
+    #projects .small .card {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        box-shadow: -0.5rem 0.5rem 2rem #000;
+        transition: .2s;
+    }
+    #projects .small .card:hover {
+        transform: translateY(-1rem);
+    }
+    #projects .small .card:hover~.card {
+        transform: translateX(130px);
+    }
+    #projects .small .card:not(:first-child) {
+        margin-left: -130px;
+    }
+}

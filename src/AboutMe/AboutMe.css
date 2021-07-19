@@ -1,0 +1,35 @@
+#about {
+    padding-top: 10vh;
+    text-align: left;
+    height: 100vh;
+}
+
+#about p {
+    padding-top: 3vh;   
+}
+
+#about td {
+    font-size: large;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    padding-right: 75px;
+}
+#about td::before {
+    content: '\2022';
+    margin-right: 5px;
+}
+
+/* text : screen width > 1200px */
+@media only screen and (min-width: 1200px) {
+    #about {
+        width: 60vw;
+        padding-left: 10vw;
+    }
+}
+/* text : screen width < 1200px */
+@media only screen and (max-width: 1199px) {
+    #about {
+        width: 100vw;
+        padding-left: 3vw;
+        padding-right: 5vw;
+    }
+}

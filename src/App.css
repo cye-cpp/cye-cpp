@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+/* Scrollbar */
+ html {
+  scrollbar-width: thin;
+}
+body::-webkit-scrollbar {
+  width: 12px;
+}
+  body::-webkit-scrollbar-track {
+  background: #fff;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #b1b1b1;
+  border: 3px solid #fff;
+  border-radius: 10px;
+}
+
+/* Navigation Bar initial animation */
+nav {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+nav.navigation,
+nav.navigation-appear,
+nav.navigation-enter {
+    transform: translateY(-10vh);
+}
+nav.navigation-appear-done,
+nav.navigation-enter-done {
+    transition: transform 1000ms;
+    transform: translateY(0);
+}
+
+/*
+  notes
+
+  < 1200px : projects starts looking bad
+  < 992px  : navbar goes to compact mode, initial text is getting a bit too small
+  < 865px  : navbar starts messing up
+*/

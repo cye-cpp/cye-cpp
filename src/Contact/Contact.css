@@ -1,0 +1,45 @@
+#contact {
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#contact h1 {
+    font-weight: bold;
+}
+
+#contact h2 {
+    font-weight: 300;
+    margin-bottom: 5vh;
+}
+
+#contact a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    font-size: 64px;
+    margin: 0 30px 0 30px;
+}
+/*
+    Used to combat the JSX-ESLint "anchor-has-content" error
+    Wrapping text in a <span> within an <a> will hide it
+*/
+#contact a span {
+    line-height: 0; 
+    font-size: 0;
+    visibility: hidden;
+}
+
+#contact .contents {
+    padding-top: 30vh;
+}
+
+#contact p {
+    padding-top: 5vh;
+}
+
+/* contact info : screen width < 525px */
+@media only screen and (max-width: 525px) {
+    #contact a {
+        font-size: 48px;
+    }
+}

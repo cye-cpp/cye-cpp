@@ -1,0 +1,49 @@
+/* Navigation Bar initial animation */
+nav {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+nav.navigation,
+nav.navigation-appear,
+nav.navigation-enter {
+    transform: translateY(-10vh);
+}
+nav.navigation-appear-done,
+nav.navigation-enter-done {
+    transition: transform 1000ms;
+    transform: translateY(0);
+}
+  
+/* navbar not in compact mode : screen width > 992px */
+@media only screen and (min-width: 992px) {
+    /* navigation bar item animations */
+    a.nav-item,
+    a.nav-item-appear,
+    a.nav-item-enter {
+        opacity: 0;
+        transform: translateX(10vw);
+    }
+    a.nav-item-appear-done,
+    a.nav-item-enter-done {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity 1000ms, transform 1000ms;
+    }
+
+    a.nav-icon,
+    a.nav-icon-appear,
+    a.nav-icon-enter {
+        opacity: 0;
+    }
+    a.nav-icon-appear-done,
+    a.nav-icon-enter-done {
+        opacity: 1;
+        transition: opacity 1000ms;
+    }
+}
+  
+  /*
+    notes
+  
+    < 1200px : projects starts looking bad
+    < 992px  : navbar goes to compact mode, initial text is getting a bit too small
+  */

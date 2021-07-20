@@ -50,8 +50,7 @@
 }
 .project .title,
 .project .name,
-.project .description,
-.project .technology {
+.project .description {
     text-align: left;
     margin-left: 20px;
 }
@@ -99,7 +98,7 @@
         left: 250px;
     }
     .project:hover .text {
-        transform: translateX(-3vw);
+        /*transform: translateX(-3vw);*/
         background-color: rgba(0, 0, 0, 0.5);
     }
     .project .image {
@@ -109,13 +108,13 @@
         /*transform: translateX(0.1px);*/
     }
     .project:hover .image {
-        transform: translate(10vw, 2vh);
+        transform: translate(10vw, 5vh);
     }
     .project:not(:hover) .image {
         filter: blur(4px);
     }
     .project:hover ~ .project {
-        transform: translateY(2vh);
+        transform: translateY(5vh);
     }
     .project a {
         position: relative;
@@ -202,7 +201,7 @@
 #projects .small .card {
     margin: 5px;
 }
-/* small project : width > 1200 */
+/* small project : width > 1400 */
 @media (min-width: 1400px) {
     /* Small projects card list */
     #projects .small .card-list {
@@ -224,5 +223,106 @@
     }
     #projects .small .card:not(:first-child) {
         margin-left: -130px;
+    }
+}
+
+/* INITIAL VIEW ANIMATION */
+@keyframes Fade-In-Right {
+    from {
+      transform: translateX(10vw);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+@keyframes Fade-In-Top {
+    from {
+      transform: translateY(-10vh);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+/* Needed NoTransform for stacked card list */
+@keyframes Fade-In-Top-NoTransform {
+    from {
+      opacity: 0;
+      top: -10vw;
+    }
+    to {
+      opacity: 1;
+      top: 0;
+    }
+}
+@keyframes Fade-In-Grow {
+    from {
+      opacity: 0;
+      transform: scale(0);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+}
+@media only screen and (min-width: 1200px) {
+    /* big screen animations */
+    #projects.view-0,
+    .small-projects.view-0 {
+        visibility: hidden;
+    }
+    .small-projects.view-1 {
+        z-index: -1;
+    }
+    .small-projects.view-1 h3 {
+        animation: Fade-In-Right 1000ms forwards;
+    }
+    .small-projects.view-1 :not(.card) {
+        animation: Fade-In-Top 1000ms forwards;
+    }
+    .small-projects.view-1 div.card:nth-of-type(1) {
+        animation: Fade-In-Top-NoTransform 250ms forwards;
+    }
+    .small-projects.view-1 div.card:nth-of-type(2) {
+        animation: Fade-In-Top-NoTransform 500ms forwards;
+    }
+    .small-projects.view-1 div.card:nth-of-type(3) {
+        animation: Fade-In-Top-NoTransform 750ms forwards;
+    }
+    .small-projects.view-1 div.card:nth-of-type(4) {
+        animation: Fade-In-Top-NoTransform 1000ms forwards;
+    }
+    .small-projects.view-1 div.card:nth-of-type(5) {
+        animation: Fade-In-Top-NoTransform 1250ms forwards;
+    }
+    .small-projects.view-1 div.card:nth-of-type(6) {
+        animation: Fade-In-Top-NoTransform 1500ms forwards;
+    }
+    #projects.view-1 .project :first-of-type {
+        animation: Fade-In-Right 1000ms forwards;
+    }
+}
+@media only screen and (max-width: 1199px) and (min-width: 768px) {
+    /* medium screen animations */
+    .small-projects.view-1 :not(.card) {
+        animation: Fade-In-Top 1000ms forwards;
+    }
+    .small-projects.view-1 div.card {
+        animation: Fade-In-Right 1000ms forwards;
+    }
+    #projects.view-1 .project :first-of-type,
+    #projects.view-1 h2 {
+        animation: Fade-In-Right 1000ms forwards;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    /* for some reason mobile phones cant load projects? */
+    #projects
+    .small-projects {
+        visibility: visible;
     }
 }

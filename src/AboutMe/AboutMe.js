@@ -1,19 +1,20 @@
-import { Container, Row, Col } from 'react-bootstrap';
 import './AboutMe.css';
+import { Container, Row, Col } from 'react-bootstrap';
 
-function AboutMe() {
+function AboutMe(props) {
+    const { forwardedRef, enterCount } = props;
     return (
-        <div id="about">
+        <div id="about" className={"viewport-block view-" + enterCount} ref={forwardedRef}>
             <h2>About Me</h2>
             <p>
-                Hello, my name is Calvin and I love developing software that I think would be fun 
-                to use or useful to have and sharing that software with the world.
-                My interest in software development came from my fascination with video games
+                My interest in software engineering came from my fascination with video games
                 and the code that powers them. I started my software development experience by
                 picking up <code>Java</code> and writing a server plugin for Minecraft.
+                Due to the positive responses from that project, I've grown an obsession for making those
+                who use my work happy. I love creating fun or useful software that everyone will share or talk about.
                 Over time I have worked on many different projects, each using a different set of 
-                technologies I had an interest in learning.<br></br><br></br>
-
+                technologies I had an interest in learning for a new challenge and to add to my arsenal of skills.
+                <br></br><br></br>
                 Today, I primarily focus on using <code>JavaScript</code> and learning the many 
                 technologies that utilize it.<br></br>
                 The following are the technologies I have been working with recently:<br></br>

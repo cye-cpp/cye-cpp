@@ -3,7 +3,12 @@ Built with react
 
 ## Commands
 ```
-npm run build
+npm start
+```
+To start the development server
+
+```
+npm run deploy
 ```
 To build static page and deploy on the `gh-pages` branch
 
@@ -13,3 +18,7 @@ git commit -m "<title>"
 git push origin master
 ```
 To push a commit to the `master` branch
+
+
+## Known issues
+- using devTools and loading page will trigger the "about me" initial animation

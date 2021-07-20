@@ -43,3 +43,24 @@
         font-size: 48px;
     }
 }
+
+/* FIRST VIEW ANIMATION */
+#contact.view-0 {
+    visibility: hidden;
+}
+#contact.view-1 :first-child {
+    animation: Fade-In-Up 1000ms forwards;
+}
+#contact.view-1 :not(:first-child) {
+    animation: Fade-In-Up 1500ms forwards;
+}
+@keyframes Fade-In-Up {
+    from {
+      transform: translateY(10vh);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}

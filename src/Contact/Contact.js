@@ -1,8 +1,9 @@
 import './Contact.css';
 
-function Contact() {
+function Contact(props) {
+    const { forwardedRef, enterCount } = props;
     return (
-        <div id="contact">
+        <div id="contact" className={"viewport-block view-" + enterCount} ref={forwardedRef}>
             <div className="contents">
                 <h1>Questions? Comments? Concerns?</h1>
                 <h2>Sure, let's connect.</h2>

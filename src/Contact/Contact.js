@@ -13,7 +13,7 @@ function Contact(props) {
                 <div className="center">
                     <p>
                         Feel free to reach out to me on any of the contact methods above.<br></br>
-                        I'll try my best to get back to you.
+                        I'm looking forward to hearing back from you.
                     </p>
                 </div>
             </div>

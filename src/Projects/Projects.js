@@ -95,6 +95,7 @@ const small = [
             <code key="tech-5-1">JavaScript</code>, 
             <code key="tech-5-2">Node.js</code>,
             <code key="tech-5-3">Discord.js</code>,
+            <code key="tech-5-4">Discord API</code>
         ],
         links: [],
         image: null
@@ -106,6 +107,7 @@ const small = [
         technology: [
             <code key="tech-6-1">Java</code>, 
             <code key="tech-6-2">Discord4J</code>,
+            <code key="tech-6-3">Discord API</code>
         ],
         links: [
             <a key="link-3-1" className="fab fa-github" target="_blank" rel="noopener noreferrer" href="https://github.com/Expugn/S-argo"><span>GitHub</span></a>

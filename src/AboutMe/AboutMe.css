@@ -16,6 +16,14 @@
     margin-right: 5px;
 }
 
+#about a {
+    font-weight: bold;
+}
+#about a:link,
+#about a:visited {
+    color: royalblue;
+}
+
 /* text : screen width > 1200px */
 @media only screen and (min-width: 1200px) {
     #about {

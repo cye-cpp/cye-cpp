@@ -46,12 +46,8 @@ function Home(props) {
                                 Calvin Ye
                             </h2>
                             <h4>
-                                I develop stuff for things I am interested in.
+                                I develop software for things I am interested in.
                             </h4>
-                            <p>
-                                I am a software engineer who loves creating software for others.<br></br>
-                                Always striving to improve myself and my work, I would love to hear your criticisms!
-                            </p>
                         </div>
                     </CSSTransition>   
                 </Container>
